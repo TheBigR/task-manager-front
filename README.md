@@ -1,4 +1,13 @@
 Front end for task manager app.
+Redux.
+React-redux.
+React-router-dom
+Redux-thunk
+Lodash
+Semantic ui
+
+
+
 
 backend - 
 
