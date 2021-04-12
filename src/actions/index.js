@@ -39,11 +39,8 @@ export const createTask = (formValues) => async (dispatch, getState) => {
 }
 
 export const deleteTask = (_id) => async (dispatch, getState) => {
-  const response = await backend.delete(
-    `/tasks/${_id}`,
-    null,
-    setHeader(getState()),
-  )
+  console.log(_id)
+  const response = await backend.delete(`/tasks/${_id}`, setHeader(getState()))
   dispatch({ type: DELETE_TASK, payload: response.data._id })
   history.push('/tasks')
 }

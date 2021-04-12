@@ -21,9 +21,9 @@ const App = () => {
             <Route path="/" exact component={Main} />
             <Route path="/tasks" exact component={TaskList} />
             <Route path="/tasks/new" exact component={TaskCreate} />
-            <Route path="/tasks/edit/:muuid" exact component={TaskEdit} />
-            <Route path="/tasks/delete/:id" exact component={TaskDelete} />
-            <Route path="/tasks/:id" exact component={TaskShow} />
+            <Route path="/tasks/edit/:_id" exact component={TaskEdit} />
+            <Route path="/tasks/delete/:_id" exact component={TaskDelete} />
+            <Route path="/tasks/:_id" exact component={TaskShow} />
             <Route path="/users/register" exact component={UserCreate} />
             <Route path="/users/login" exact component={Login} />
           </Switch>

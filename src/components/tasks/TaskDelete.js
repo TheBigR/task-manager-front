@@ -7,7 +7,7 @@ import history from '../../history'
 
 class TaskDelete extends React.Component {
   componentDidMount() {
-    this.props.fetchTask(this.props.match.params.id)
+    this.props.fetchTask(this.props.match.params._id)
   }
 
   renderActions() {
@@ -20,7 +20,7 @@ class TaskDelete extends React.Component {
         >
           Delete
         </button>
-        <Link to="/" className="ui button">
+        <Link to="/tasks" className="ui button">
           Cancel
         </Link>
       </React.Fragment>
@@ -32,7 +32,7 @@ class TaskDelete extends React.Component {
       return 'Are you sure you want to delete this task?'
     }
 
-    return `Are you sure you want to delete the task with the description: ${this.props.task.title}`
+    return `Are you sure you want to delete the task with the description: ${this.props.task.description}`
   }
 
   render() {
