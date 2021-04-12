@@ -6,11 +6,11 @@ import TaskForm from './TaskForm'
 
 class TaskEdit extends React.Component {
   componentDidMount() {
-    this.props.fetchTask(this.props.match.params.muuid)
+    this.props.fetchTask(this.props.match.params._id)
   }
 
   onSubmit = (formValues) => {
-    this.props.editTask(this.props.match.params.muuid, formValues)
+    this.props.editTask(this.props.match.params._id, formValues)
   }
 
   render() {
@@ -31,9 +31,7 @@ class TaskEdit extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    task: state.tasks.find(
-      (task) => task._id === ownProps.match.params_id,
-    ),
+    task: state.tasks[ownProps.match.params_id],
   }
 }
 
