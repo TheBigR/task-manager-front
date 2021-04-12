@@ -26,7 +26,6 @@ const App = () => {
             <Route path="/tasks/:id" exact component={TaskShow} />
             <Route path="/users/register" exact component={UserCreate} />
             <Route path="/users/login" exact component={Login} />
-
           </Switch>
         </div>
       </Router>

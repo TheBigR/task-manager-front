@@ -1,24 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { login, logout } from '../../actions'
+import { logout } from '../../actions'
+import { Link } from 'react-router-dom'
 
 class Auth extends React.Component {
-  componentDidMount() {}
-
-
-
-  onLoginClick = () => {
-    this.user.login()
-  }
-
   onLogoutClick = () => {
-    this.user.logout()
+    this.props.logout()
   }
 
-  renderAuthButton() {
-    if (this.props.isSignedIn === null) {
-      return null
-    } else if (this.props.isSignedIn) {
+  render() {
+    if (this.props.isSignedIn) {
       return (
         <button className="ui red button" onClick={this.onLogoutClick}>
           <i className="icon" />
@@ -27,10 +18,9 @@ class Auth extends React.Component {
       )
     } else {
       return (
-        <button className="ui red button" onClick={this.onLoginClick}>
-          <i className="icon" />
-          Log In 
-        </button>
+        <Link to="/users/login" className="button ui blue">
+          Login
+        </Link>
       )
     }
   }
@@ -40,4 +30,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.user.isSignedIn }
 }
 
-export default connect(mapStateToProps, { login, logout })(Auth)
+export default connect(mapStateToProps, { logout })(Auth)
