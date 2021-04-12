@@ -7,6 +7,8 @@ import TaskDelete from './tasks/TaskDelete'
 import TaskEdit from './tasks/TaskEdit'
 import TaskList from './tasks/TaskList'
 import TaskShow from './tasks/TaskShow'
+import UserCreate from './user/UserCreate'
+import Login from './Auth/Login'
 import Main from './Main'
 
 const App = () => {
@@ -22,6 +24,9 @@ const App = () => {
             <Route path="/tasks/edit/:muuid" exact component={TaskEdit} />
             <Route path="/tasks/delete/:id" exact component={TaskDelete} />
             <Route path="/tasks/:id" exact component={TaskShow} />
+            <Route path="/users/register" exact component={UserCreate} />
+            <Route path="/users/login" exact component={Login} />
+
           </Switch>
         </div>
       </Router>

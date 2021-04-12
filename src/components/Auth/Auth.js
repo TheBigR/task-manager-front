@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { login, logout } from '../actions'
+import { login, logout } from '../../actions'
 
 class Auth extends React.Component {
   componentDidMount() {}

@@ -67,8 +67,8 @@ export const fetchTasks = () => async (dispatch, getState) => {
   dispatch({ type: FETCH_TASKS, payload: response.data })
 }
 
-export const login = (email, password) => async (dispatch) => {
-  const response = await backend.post('/users/login', { email, password })
+export const login = (formValues) => async (dispatch) => {
+  const response = await backend.post('/users/login', formValues)
   dispatch({ type: LOGIN, payload: response.data })
   history.push('/')
 }
