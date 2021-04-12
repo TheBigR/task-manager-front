@@ -10,7 +10,7 @@ class Main extends React.Component {
           <Link to="/users/login" className="button ui ">
             Login
           </Link>
-          <Link to="/users/create" className="button ui">
+          <Link to="/users/register" className="button ui">
             Register
           </Link>
         </div>
