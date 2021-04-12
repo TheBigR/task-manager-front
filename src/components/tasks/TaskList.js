@@ -21,22 +21,19 @@ class TaskList extends React.Component {
               <input
                 type="checkbox"
                 name="example"
-                checked={task.done}
+                checked={task.completed}
                 onChange={() => this.props.toggleTask(task._id)}
               />
               <label>Done?</label>
             </div>
           </div>
-          <div className="content">{task.title}</div>
+          <div className="content">{task.description}</div>
           <div className="right floated content">
-            <Link
-              to={`/tasks/edit/${task.muuid}`}
-              className="ui button primary"
-            >
+            <Link to={`/tasks/edit/${task._id}`} className="ui button primary">
               Edit
             </Link>
             <Link
-              to={`/tasks/delete/${task.muuid}`}
+              to={`/tasks/delete/${task._id}`}
               className="ui button negative"
             >
               Delete
