@@ -8,7 +8,7 @@ import {
   FETCH_TASKS,
   // SORTBYCREATION,
   // SORTBYUPDATE,
-  // CREATE_USER,
+  CREATE_USER,
   LOGIN,
   LOGOUT,
   // DELETE_USER,
@@ -20,6 +20,12 @@ const setHeader = (state) => {
   return {
     headers: { Authorization: `Bearer ${state.user.token}` },
   }
+}
+
+export const createUser = (formValues) => async (dispatch) => {
+  const response = await backend.post('/users', formValues)
+  dispatch({ type: CREATE_USER, payload: response.data })
+  history.push('/')
 }
 
 export const createTask = (formValues) => async (dispatch, getState) => {

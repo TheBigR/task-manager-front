@@ -1,10 +1,21 @@
-import React from 'react';
-
+import React from 'react'
+import { connect } from 'react-redux'
+import { createUser } from '../../actions'
+import UserForm from './UserForm'
 
 class UserCreate extends React.Component {
-   render() {
-      return <div>UserCreate</div>;
-   }
+  onSubmit = (formValues) => {
+    this.props.createUser(formValues)
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>UserCreate</h3>
+        <UserForm onSubmit={this.onSubmit} />
+      </div>
+    )
+  }
 }
 
-export default UserCreate;
+export default connect(null, { createUser })(UserCreate)
