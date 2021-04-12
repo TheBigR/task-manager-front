@@ -18,7 +18,7 @@ import {
 
 const setHeader = (state) => {
   return {
-    headers: { Authorization: `Bearer ${state.user.token}` },
+    headers: { Authorization: `Bearer ${state.user.currentUser.token}` },
   }
 }
 

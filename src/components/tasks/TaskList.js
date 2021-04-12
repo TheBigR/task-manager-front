@@ -15,7 +15,7 @@ class TaskList extends React.Component {
   renderList() {
     return this.props.tasks.map((task) => {
       return (
-        <div className="item" key={task.muuid}>
+        <div className="item" key={task._id}>
           <div className="left floated content">
             <div className="ui checkbox centered">
               <input
@@ -54,16 +54,12 @@ class TaskList extends React.Component {
           <i className="plus square outline icon"></i>
           Add Task
         </Link>
-        <button className="ui button" onClick={this.props.sortByCreation}>
+        {/* <button className="ui button" onClick={this.props.sortByCreation}>
           By Creation
         </button>
         <button className="ui button" onClick={this.props.sortByUpdate}>
           By Update
-        </button>
-        <Link to="/tasks/delete" className="ui labeled icon button negative">
-          <i className="icon eraser"></i>
-          Delete All
-        </Link>
+        </button> */}
       </div>
     )
   }
