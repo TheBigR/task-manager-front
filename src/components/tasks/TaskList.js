@@ -82,7 +82,7 @@ class TaskList extends React.Component {
 const mapStateToProps = (state) => {
   return {
     tasks: Object.values(state.tasks),
-    isSignedIn: state.auth.isSignedIn,
+    isSignedIn: state.user.isSignedIn,
   }
 }
 
