@@ -7,7 +7,7 @@ import {
 } from '../actions/types'
 
 const INITIAL_STATE = {
-  isSignedIn: null,
+  isSignedIn: false,
   currentUser: null,
 }
 
@@ -18,9 +18,9 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case LOGIN:
       return { ...state, isSignedIn: true, currentUser: action.payload }
     case LOGOUT:
-      return { ...state, isSignedIn: false, currentUser: null }
+      return { ...state, isSignedIn: false, currentUser: false }
     case DELETE_USER:
-      return { ...state, isSignedIn: false, currentUser: null }
+      return { ...state, isSignedIn: false, currentUser: false }
     case EDIT_USER:
       return { ...state, isSignedIn: true, currentUser: action.payload }
     default:

@@ -7,7 +7,7 @@ import TaskDelete from './tasks/TaskDelete'
 import TaskEdit from './tasks/TaskEdit'
 import TaskList from './tasks/TaskList'
 import TaskShow from './tasks/TaskShow'
-import TaskDeleteAll from './tasks/TaskDeleteAll'
+import Main from './Main'
 
 const App = () => {
   return (
@@ -16,12 +16,11 @@ const App = () => {
         <div>
           <Header />
           <Switch>
-              
+            <Route path="/" exact component={Main} />
             <Route path="/tasks" exact component={TaskList} />
             <Route path="/tasks/new" exact component={TaskCreate} />
             <Route path="/tasks/edit/:muuid" exact component={TaskEdit} />
             <Route path="/tasks/delete/:id" exact component={TaskDelete} />
-            <Route path="/tasks/delete" exact component={TaskDeleteAll} />
             <Route path="/tasks/:id" exact component={TaskShow} />
           </Switch>
         </div>
